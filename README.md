@@ -1,77 +1,111 @@
-## sentiment-analysis
-This project aims to perform sentiment analysis on text data using Support Vector Classifier (SVC). The data is preprocessed using nltk and spacy libraries, and the model is evaluated based on its accuracy and performance on test data.
+# Sentiment Analysis Using Support Vector Classifier (SVC)
 
-Features
-Text Preprocessing: Cleaning, tokenization, stopword removal, and lemmatization using nltk and spacy.
-Sentiment Analysis: Classifies text as positive, negative, or neutral using SVM.
-Hyperparameter Tuning: Fine-tuning C and gamma parameters to improve the model's accuracy.
-Confusion Matrix: Visual representation of the model's performance.
-New Data Predictions: Predict sentiments for new unseen data.
-Real Review Analysis: Sentiment predictions are saved for new customer reviews.
-Dataset
-The model is trained and evaluated using a CSV dataset with two columns: text and sentiment. The sentiment has three categories:
+This project performs **sentiment analysis** on text data using a **Support Vector Classifier (SVC)**. The data is preprocessed using **nltk** and **spacy** libraries, and the model is evaluated based on accuracy and performance on the test dataset.
 
-Positive
-Negative
-Neutral
-The reviews are preprocessed to remove any noise before feeding them to the model.
+## Features
 
-Libraries Used
-numpy
-pandas
-matplotlib
-seaborn
-nltk
-spacy
-sklearn (Support Vector Classifier)
-collections
-How to Run the Project
-Clone the repository:
-bash
-Copy code
-git clone https://github.com/yourusername/sentiment-analysis-svc.git
+- **Text Preprocessing**: Cleaning, tokenization, stopword removal, and lemmatization using `nltk` and `spacy`.
+- **Sentiment Analysis**: Classifies text as **positive**, **negative**, or **neutral** using **SVM**.
+- **Hyperparameter Tuning**: Fine-tuning the `C` and `gamma` parameters to improve the model's accuracy.
+- **Confusion Matrix**: Provides a visual representation of the model's performance.
+- **New Data Predictions**: Predicts sentiments for unseen text data.
+- **Real Review Analysis**: Analyzes and predicts sentiment for new customer reviews and saves the predictions.
+
+---
+
+## Dataset
+
+The model is trained and evaluated using a **CSV dataset** containing two columns:
+- `text`
+- `sentiment`
+
+The **sentiment** column has three categories:
+- **Positive**
+- **Negative**
+- **Neutral**
+
+Before being fed into the model, the text reviews are preprocessed to remove any noise.
+
+---
+
+## Libraries Used
+
+The following Python libraries are used in the project:
+- **numpy**
+- **pandas**
+- **matplotlib**
+- **seaborn**
+- **nltk**
+- **spacy**
+- **sklearn** (Support Vector Classifier)
+- **collections**
+
+---
+
+## How to Run the Project
+
+Follow the steps below to run the project on your local machine:
+
+1. **Clone the repository**:
+```bash
+   git clone https://github.com/yourusername/sentiment-analysis-svc.git
 Install the required libraries:
-bash
-Copy code
+```
+
+```bash
 pip install -r requirements.txt
-Place the training data (train.csv) and testing data (test.csv) in the root directory.
+```
+Place the training and testing data (train.csv and test.csv) in the root directory.
+
 Run the script:
-bash
-Copy code
+
+```bash
 python sentiment_analysis.py
+```
 Model Overview
-We use the Support Vector Classifier (SVC) from sklearn to build a sentiment analysis model. The model is trained on a labeled dataset, with the text being classified as positive, negative, or neutral.
+We use the Support Vector Classifier (SVC) from the sklearn library to build a sentiment analysis model. The model is trained on a labeled dataset, with the text being classified as positive, negative, or neutral.
 
-The following steps are performed in the project:
+Key Steps
+Data Preprocessing:
 
-Data Preprocessing: Text cleaning, tokenization, stopwords removal, and lemmatization.
-Model Training: Using SVC to classify text into different sentiments.
-Hyperparameter Tuning: Tuning the model's parameters (C and gamma) to improve its accuracy.
-Model Evaluation: Confusion matrix, classification report, and accuracy score are calculated.
+Text cleaning
+Tokenization
+Stopwords removal
+Lemmatization
+Model Training:
+
+Using SVC to classify text into different sentiment categories.
+Hyperparameter Tuning:
+
+Tuning the model's C and gamma parameters to improve accuracy.
+Model Evaluation:
+
+Generating a confusion matrix, classification report, and calculating the accuracy score.
 Sample Results
-A sample confusion matrix from the model evaluation is shown below:
+Here is an example confusion matrix generated from the model evaluation:
 
 mathematica
-Copy code
+
 Confusion Matrix:
-                  Predicted
-                Negative  Neutral  Positive
-True Negative      50        8       2
-True Neutral       10       70       5
-True Positive      3         7      65
-Example Usage
+                      Predicted
+| True \ Predicted | Negative | Neutral | Positive |
+|------------------|----------|---------|----------|
+| **Negative**      | 50       | 8       | 2        |
+| **Neutral**       | 10       | 70      | 5        |
+| **Positive**      | 3        | 7       | 65       |
+
+## Example Usage
+
 Below is an example of how the model classifies new text inputs:
 
-kotlin
-Copy code
-Input: ["I love this movie!", "This product is terrible.", "The food was delicious.", "This product is alright"]
-Output:
-- I love this movie! 😃
-- This product is terrible. 😞
-- The food was delicious. 😃
-- This product is alright 😐
-
-
-
-
-
+##Input:
+```python
+["I love this movie!", "This product is terrible.", "The food was delicious.", "This product is alright"]
+```
+##Output:
+```python
+I love this movie!  😃
+This product is terrible.  😞
+The food was delicious.  😃
+This product is alright.  😐
+```
